@@ -1,0 +1,12 @@
+---
+title: "About"
+format: html
+editor: visual
+---
+
+This project was developed by **\[199BSA1\]** For [STA 199: Introduction to Data Science](https://sta199-f23-2.github.io/) at Duke University. The team is comprised of the following team members.
+
+-   Sara Oberle is a Sophomore majoring in Neuroscience and minoring in Psychology and (probably) Chemistry on the pre-med track.
+-   Hannah Pechet is a Junior majoring in Public Policy and minoring in Journalism.
+-   Ethan Byrne is a Sophomore majoring in Public Policy.
+-   Aaron Siegle is a Sophomore majoring in Environmental Science and Policy and pursuing a certificate in Energy & Environment.

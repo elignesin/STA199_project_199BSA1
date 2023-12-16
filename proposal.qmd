@@ -1,0 +1,148 @@
+---
+title: "199BSA1"
+subtitle: "Research Proposal"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+```{r}
+#| label: load-pkgs
+#| message: false
+
+library(tidyverse)
+```
+
+# Data 1
+
+## Introduction and data
+
+-   **Source of the Data:** The data was compiled by the statistics and news website 538. The data can be downloaded off the 538 website here: [https://data.fivethirtyeight.com/](#0).
+
+    It also can be found (along with a description of the variables) in a GitHub repository here: <https://github.com/fivethirtyeight/data/tree/master/redlining>.  
+
+-   **Data Collection:** The data about the redlining zones was taken from the Mapping Inequality Project, which collected the data by analyzing the Home Owner's Loan Corporation (HOLC) maps produced in between 1935 and 1940. The data of race and ethincity was taken from the 2020 U.S. Census. 
+
+-   **Overview of Observations:** The dataset is about redlining in America in the early 20th century and how it continues to impact different communities today. The dataset contains 28 unique columns and 551 observations. Most of the columns give the number of residents belonging to each racial group within a HOLC zone. There are also columns indicating the total population of the HOLC zone, percentage of each racial group in a HOLC zone and the populations and percentages of ethnic groups across an entire metropolitian area's HOLC zones. These observations are quantitative, including both raw numbers and percentages. There is also a column representing HOLC zone, which is categorical with the categories being the four HOLC zones. 
+
+-   **Ethical Concerns:** Given that the data about the HOLC zones and U.S Census Data are publicly available and do not reveal any sensitive or problematic informations, we believe that there are no ethical concerns about the data. 
+
+## Research question
+
+-   **Question:** Do historic HOLC lower loaning zones correspond to communities with a greater percentage of people of color than the metropolitan area as a whole? Does this trend differ in between regions of the Untied States?
+
+-   **Research Topic Overview:** The HOLC program was a major factor in whether families were able to achieve homeownership during the early 20th century, when suburban development made homeownership more attainable for a larger percentage of Americans. This is significant because homeownership is a generational source of wealth that can be passed on to descendants. Our hypothesis is that lower graded HOLC zones (zones C and D) are more likely to have higher proportion of non-white residents than the metropolitan area it is in at a whole. 
+
+-   **Variables:** The vast majority of the variables are quantitative (including the percentages of racial groups in each zone and the population of each racial group in a HOLC zone). Additionally, there are two categorical variables (metropolitan area and HOLC zone level, which is ordinal). 
+
+## Literature
+
+-   [@aaronson2021; @aaronson2021a]
+
+-   Aaronson, Daniel et al. "The long-run effects of the 1930s HOLC 'redlining' maps on place-based measures of economic opportunity and socioeconomic success." *Regional Science and Urban Economics*, 86, January 2021, <https://www-sciencedirect-com.proxy.lib.duke.edu/science/article/pii/S0166046220303070>
+
+-   **Article Summary:** The article compares HOLC loan zones with socioeconomic opportunity metrics decades after the policy was implemented. The researchers establish a causal relationship between access to HOLC credit given on location and economic prosperity based on data from the Opportunity Atlas. The researchers also look at the difference in economic opportunity between families that are right along the border of HOLC zones. The results show a statistically significant difference in economic mobility between HOLC zones. They also find more teenage mothers, incarceration, and poverty in lower HOLC zones. Another finding is that modern credit scores are closely related to historic HOLC zones.
+
+-   **Contribution of Research Question:** This article focuses on economic differences between HOLC zones while our research questions look explicitly at racial differences. While this article qualitatively mentions racial disparities, it does not include racial disparities in the statistical analysis. 
+
+## Glimpse of data
+
+```{r}
+#| label: load-data-1
+metro_grades <- read_csv("data/metro_grades.csv")
+```
+
+```{r}
+#| label: glimpse-data-1
+glimpse(metro_grades)
+```
+
+# Data 2
+
+## Introduction and data
+
+-   **Source of the Data:** LA city provides data sets on various topics. This set is on their website and is data collected on arrests in the city from 2010 to 2019: <https://data.lacity.org/Public-Safety/Drug-Possession-Arrest-Data-By-Race/x4fz-zcf7>
+
+-   **Data Collection:** This data was collected from 2010 through 2019 by the Los Angeles Police Department. It is transcribed from original arrest reports which were then typed on paper. 
+
+-   **Overview of Observations:** Each observation is an individual's arrest for drug possession. There are 16 variables and 1.24 million observations, we are only looking at the rows from 2019, of which there are 25,174. For each observation there are variables that cover when and where the arrest was made, information about the person being arrested such as their age, gender, and race, there's also columns which cover information about why the arrest was made such as the charge and charge description. 
+
+## Research question
+
+-   **Question:** In Los Angeles city, within 2019, is there a correlation between the initial crime that a person is charged with (curfew violation, open container, battery, etc) and the arrest for drug possession? Do we see more people of certain races or genders charged more often with certain crimes? 
+
+-   **Research Topic:** The research topic would focus on the racial and gender demographics of drug arrests and look at what kind of situations (initial charges) often have a correlation with drug possession or the pursuit of a drug-related arrest. Our hypothesis is that non white men are the most likely to be arrested for drug possession. We think that these arrests are most likely to be paired with charges related to past experiences with the justice system such as breaking curfew and probation/parole terms. 
+
+-   **Variables:** The variables will be mostly nominal categorical variables: Sex code, Descent Code, Charge Group Description, and Charge Description. We may also look at the Age variable which is ordinal quantitative.
+
+## Literature
+
+-   [@gaston2019]
+
+-   Gaston, Shytierra. "Producing race disparities: A study of drug arrests across place and race\*." *Criminology*, 57, April 2019. <https://doi.org/10.1111/1745-9125.12207>.
+
+-   **Article Summary:** The article examines through a qualitative lens, how police interactions that lead to drug arrests are affected by the racial make-up of the neighborhoods the people were arrested in for drug arrests. It explores the race of who gets arrested most and where. The article finds that officers chose to use higher rates of surveillance in black neighborhoods. The article asserts that police cite "suspicion of Black citizens' ambiguous demeanor and the area's crime problems" to then initiate stop and frisks more often than for white people and in neighborhoods white people are more likely to frequent. This leads to disproportionate rates of Black people being arrested for drugs when it's known that Black and white people use drugs at similar levels. Because of systemic racism in policing, Black people are also more likely to have outstanding bench warrants which increase their risk for arrest during drug stops.
+
+-   **Contribution of Research Question:** This article focuses on how the location (white neighborhood or not) of the arrest may impact the decision-making of the police officer to further instigate an arrest. Our question explores the arrests from another (related) angle of whether there's correlation between the initial reason for interaction/charge and being arrested for drugs. These reasons may vary based on the location of the interaction but that is not exactly what our project is focusing on. 
+
+## Glimpse of data
+
+```{r}
+#| label: load-data-2
+possession_arrest <- read_csv("data/Drug_Possession_Arrest_Data_By_Race.csv")
+```
+
+```{r}
+#| label: glimpse-data-2
+glimpse(possession_arrest)
+```
+
+# Data 3
+
+## Introduction and data
+
+-   **Source of the Data:** The data was collected by the United States Diabetes Surveillance System (USDSS) under the Centers for Disease Control (CDC). The data sets can be found here: <https://gis.cdc.gov/grasp/diabetes/diabetesatlas-sdoh.html>.
+
+-   **Data Colletion:** The data was collected from CDC's Behavioral Risk Factor Surveillance System (BRFSS) and from the US Census Bureau's Population Estimates Program. The BRFSS conducts surveys through both landline- and cellular- telephone-based communication. ).
+
+-   **Overview of Observations:** There are over 3100 observations and 11 variables. The variables are 'Year, 'Country_FIPS', 'County',  'State', 'Diagnosed Diabetes Percentage', 'Obesity', 'Overall SVI', 'Below Poverty', 'Overall Socioeconomic Status', 'Urban_Rural', '​​Newly Diagnosed Diabetes Rate per 1000', and Each observation is the data for a unique county or county equivalent in the United States. The incidence rates of diagnosed diabetes for each county do not distinguish between types of diabetes. The data for each social detemrinant of health (SDOH) are seperated across data sets, requiring them to be manually joined. 
+
+## Research question
+
+-   **Question:** How does socioeconomic status correlate to the incidence of diabetes? Is the incidence of diabetes in a community a determinant of its social vulnerability index (SVI)? 
+
+-   **Research Topic:** This topic examines the intersection of socioeconomic status, the incidence of diabetes, and social determinants of health. We hypothesize that areas classified as rural with the highest proportions of the population below the poverty line will correlate with higher rates of diagnosed diabetes.
+
+-   **Variables:** The variables are both categorical and quantitative. The Year, 'Country_FIPS', 'County', and 'State' variables are categorical. The 'Diagnosed Diabetes Percentage', 'Overall SVI', and 'Below Poverty' variables are quantitive measures. 
+
+## Literature
+
+-   [@hill-briggs2020]
+
+-   Hill-Briggs, Felicia et al. "Social Determinants of Health and Diabetes: A Scientific Review." *Diabetes Care*, 44, 2021, <https://doi.org/10.2337/dci20-0053>.
+
+-   **Article Summary:** The article is very long but it explains the results of many different studies investigating the impact of socioeconomic status on the prevalence of diabetes in American adults. It explains that those with no high school education have the highest risk of developing diabetes, as compared to those who did not finish high school and those that have an education greater than the high school level. It further explains that poor people in poor neighborhoods have the highest risk of developing diabetes, and further clarifies these risks by race. It also investigates food environment, environmental risk factors, and social context. It then provides data to demonstrate the linkages of the health care system on social determinants of health.
+
+-   **Contribution of Research Question:** It provides a very in-depth review of the many different factors included in social determinants of health that are undoubtedly included in our data's social vulnerability index (SVI). It gives background and information relevant to our data's topic, letting us link it to healthcare information. 
+
+## Glimpse of data
+
+```{r}
+#| label: load-data-3a
+diagnosed_svi <- read_csv("data/Diabetes_Diagnosed_OverallSVI.csv")
+```
+
+```{r}
+#| label: load-data-3b
+newlydiagnosed_se <- read_csv("data/Diabetes_NewlyDiagnosed_Socioeconomic.csv")
+```
+
+```{r}
+#| label: load-data-3c
+newlydiagnosed_svi <- read_csv("data/Diabetes_NewlyDiagnosed_OverallSVI.csv")
+```
+
+```{r}
+#| label: load-data-3d
+obesity_belowpoverty <- read_csv("data/Diabetes_Obesity_BelowPoverty.csv")
+```

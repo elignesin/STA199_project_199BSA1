@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>199BSA1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">199BSA1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./proposal.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Proposal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./presentation.pdf" rel="" target="">
+ <span class="menu-text">Presentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./report.html" rel="" target="">
+ <span class="menu-text">Report</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-1" id="toc-data-1" class="nav-link active" data-scroll-target="#data-1">Data 1</a>
+  <ul class="collapse">
+  <li><a href="#introduction-and-data" id="toc-introduction-and-data" class="nav-link" data-scroll-target="#introduction-and-data">Introduction and data</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature">Literature</a></li>
+  <li><a href="#glimpse-of-data" id="toc-glimpse-of-data" class="nav-link" data-scroll-target="#glimpse-of-data">Glimpse of data</a></li>
+  </ul></li>
+  <li><a href="#data-2" id="toc-data-2" class="nav-link" data-scroll-target="#data-2">Data 2</a>
+  <ul class="collapse">
+  <li><a href="#introduction-and-data-1" id="toc-introduction-and-data-1" class="nav-link" data-scroll-target="#introduction-and-data-1">Introduction and data</a></li>
+  <li><a href="#research-question-1" id="toc-research-question-1" class="nav-link" data-scroll-target="#research-question-1">Research question</a></li>
+  <li><a href="#literature-1" id="toc-literature-1" class="nav-link" data-scroll-target="#literature-1">Literature</a></li>
+  <li><a href="#glimpse-of-data-1" id="toc-glimpse-of-data-1" class="nav-link" data-scroll-target="#glimpse-of-data-1">Glimpse of data</a></li>
+  </ul></li>
+  <li><a href="#data-3" id="toc-data-3" class="nav-link" data-scroll-target="#data-3">Data 3</a>
+  <ul class="collapse">
+  <li><a href="#introduction-and-data-2" id="toc-introduction-and-data-2" class="nav-link" data-scroll-target="#introduction-and-data-2">Introduction and data</a></li>
+  <li><a href="#research-question-2" id="toc-research-question-2" class="nav-link" data-scroll-target="#research-question-2">Research question</a></li>
+  <li><a href="#literature-2" id="toc-literature-2" class="nav-link" data-scroll-target="#literature-2">Literature</a></li>
+  <li><a href="#glimpse-of-data-2" id="toc-glimpse-of-data-2" class="nav-link" data-scroll-target="#glimpse-of-data-2">Glimpse of data</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">199BSA1</h1>
+<p class="subtitle lead">Research Proposal</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="data-1" class="level1">
+<h1>Data 1</h1>
+<section id="introduction-and-data" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-and-data">Introduction and data</h2>
+<ul>
+<li><p><strong>Source of the Data:</strong> The data was compiled by the statistics and news website 538. The data can be downloaded off the 538 website here: <a href="#0">https://data.fivethirtyeight.com/</a>.</p>
+<p>It also can be found (along with a description of the variables) in a GitHub repository here: <a href="https://github.com/fivethirtyeight/data/tree/master/redlining" class="uri">https://github.com/fivethirtyeight/data/tree/master/redlining</a>. &nbsp;</p></li>
+<li><p><strong>Data Collection:</strong> The data about the redlining zones was taken from the Mapping Inequality Project, which collected the data by analyzing the Home Owner’s Loan Corporation (HOLC) maps produced in between 1935 and 1940. The data of race and ethincity was taken from the 2020 U.S. Census.&nbsp;</p></li>
+<li><p><strong>Overview of Observations:</strong> The dataset is about redlining in America in the early 20th century and how it continues to impact different communities today. The dataset contains 28 unique columns and 551 observations. Most of the columns give the number of residents belonging to each racial group within a HOLC zone. There are also columns indicating the total population of the HOLC zone, percentage of each racial group in a HOLC zone and the populations and percentages of ethnic groups across an entire metropolitian area’s HOLC zones. These observations are quantitative, including both raw numbers and percentages. There is also a column representing HOLC zone, which is categorical with the categories being the four HOLC zones.&nbsp;</p></li>
+<li><p><strong>Ethical Concerns:</strong> Given that the data about the HOLC zones and U.S Census Data are publicly available and do not reveal any sensitive or problematic informations, we believe that there are no ethical concerns about the data.&nbsp;</p></li>
+</ul>
+</section>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research question</h2>
+<ul>
+<li><p><strong>Question:</strong> Do historic HOLC lower loaning zones correspond to communities with a greater percentage of people of color than the metropolitan area as a whole? Does this trend differ in between regions of the Untied States?</p></li>
+<li><p><strong>Research Topic Overview:</strong> The HOLC program was a major factor in whether families were able to achieve homeownership during the early 20th century, when suburban development made homeownership more attainable for a larger percentage of Americans. This is significant because homeownership is a generational source of wealth that can be passed on to descendants. Our hypothesis is that lower graded HOLC zones (zones C and D) are more likely to have higher proportion of non-white residents than the metropolitan area it is in at a whole.&nbsp;</p></li>
+<li><p><strong>Variables:</strong> The vast majority of the variables are quantitative (including the percentages of racial groups in each zone and the population of each racial group in a HOLC zone). Additionally, there are two categorical variables (metropolitan area and HOLC zone level, which is ordinal).&nbsp;</p></li>
+</ul>
+</section>
+<section id="literature" class="level2">
+<h2 class="anchored" data-anchor-id="literature">Literature</h2>
+<ul>
+<li><p><span class="citation" data-cites="aaronson2021 aaronson2021a">(<a href="#ref-aaronson2021" role="doc-biblioref">Aaronson et al. 2021a</a>, <a href="#ref-aaronson2021a" role="doc-biblioref">2021b</a>)</span></p></li>
+<li><p>Aaronson, Daniel et al.&nbsp;“The long-run effects of the 1930s HOLC ‘redlining’ maps on place-based measures of economic opportunity and socioeconomic success.” <em>Regional Science and Urban Economics</em>, 86, January 2021, <a href="https://www-sciencedirect-com.proxy.lib.duke.edu/science/article/pii/S0166046220303070" class="uri">https://www-sciencedirect-com.proxy.lib.duke.edu/science/article/pii/S0166046220303070</a></p></li>
+<li><p><strong>Article Summary:</strong> The article compares HOLC loan zones with socioeconomic opportunity metrics decades after the policy was implemented. The researchers establish a causal relationship between access to HOLC credit given on location and economic prosperity based on data from the Opportunity Atlas. The researchers also look at the difference in economic opportunity between families that are right along the border of HOLC zones. The results show a statistically significant difference in economic mobility between HOLC zones. They also find more teenage mothers, incarceration, and poverty in lower HOLC zones. Another finding is that modern credit scores are closely related to historic HOLC zones.</p></li>
+<li><p><strong>Contribution of Research Question:</strong> This article focuses on economic differences between HOLC zones while our research questions look explicitly at racial differences. While this article qualitatively mentions racial disparities, it does not include racial disparities in the statistical analysis.&nbsp;</p></li>
+</ul>
+</section>
+<section id="glimpse-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>metro_grades <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/metro_grades.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 551 Columns: 28
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): metro_area, holc_grade
+dbl (26): white_pop, black_pop, hisp_pop, asian_pop, other_pop, total_pop, p...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(metro_grades)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 551
+Columns: 28
+$ metro_area          &lt;chr&gt; "Akron, OH", "Akron, OH", "Akron, OH", "Akron, OH"…
+$ holc_grade          &lt;chr&gt; "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", …
+$ white_pop           &lt;dbl&gt; 24702, 41531, 73105, 6179, 16989, 26644, 56878, 16…
+$ black_pop           &lt;dbl&gt; 8624, 16499, 22847, 6921, 1818, 7094, 16795, 19581…
+$ hisp_pop            &lt;dbl&gt; 956, 2208, 3149, 567, 1317, 4334, 10357, 6688, 367…
+$ asian_pop           &lt;dbl&gt; 688, 3367, 6291, 455, 1998, 2509, 6355, 2191, 21, …
+$ other_pop           &lt;dbl&gt; 1993, 4211, 7302, 1022, 1182, 4650, 11153, 4364, 8…
+$ total_pop           &lt;dbl&gt; 36963, 67816, 112694, 15144, 23303, 45230, 101538,…
+$ pct_white           &lt;dbl&gt; 66.83, 61.24, 64.87, 40.80, 72.91, 58.91, 56.02, 3…
+$ pct_black           &lt;dbl&gt; 23.33, 24.33, 20.27, 45.70, 7.80, 15.68, 16.54, 39…
+$ pct_hisp            &lt;dbl&gt; 2.59, 3.26, 2.79, 3.75, 5.65, 9.58, 10.20, 13.48, …
+$ pct_asian           &lt;dbl&gt; 1.86, 4.96, 5.58, 3.00, 8.57, 5.55, 6.26, 4.42, 1.…
+$ pct_other           &lt;dbl&gt; 5.39, 6.21, 6.48, 6.75, 5.07, 10.28, 10.98, 8.79, …
+$ lq_white            &lt;dbl&gt; 0.94, 0.86, 0.91, 0.57, 1.09, 0.88, 0.84, 0.51, 1.…
+$ lq_black            &lt;dbl&gt; 1.41, 1.47, 1.23, 2.76, 0.66, 1.33, 1.40, 3.35, 0.…
+$ lq_hisp             &lt;dbl&gt; 1.00, 1.26, 1.08, 1.45, 0.77, 1.30, 1.39, 1.83, 0.…
+$ lq_asian            &lt;dbl&gt; 0.46, 1.23, 1.38, 0.74, 1.21, 0.78, 0.88, 0.62, 0.…
+$ lq_other            &lt;dbl&gt; 0.97, 1.11, 1.16, 1.21, 0.72, 1.47, 1.57, 1.26, 1.…
+$ surr_area_white_pop &lt;dbl&gt; 304399, 304399, 304399, 304399, 387016, 387016, 38…
+$ surr_area_black_pop &lt;dbl&gt; 70692, 70692, 70692, 70692, 68371, 68371, 68371, 6…
+$ surr_area_hisp_pop  &lt;dbl&gt; 11037, 11037, 11037, 11037, 42699, 42699, 42699, 4…
+$ surr_area_asian_pop &lt;dbl&gt; 17295, 17295, 17295, 17295, 41112, 41112, 41112, 4…
+$ surr_area_other_pop &lt;dbl&gt; 23839, 23839, 23839, 23839, 40596, 40596, 40596, 4…
+$ surr_area_pct_white &lt;dbl&gt; 71.24, 71.24, 71.24, 71.24, 66.75, 66.75, 66.75, 6…
+$ surr_area_pct_black &lt;dbl&gt; 16.55, 16.55, 16.55, 16.55, 11.79, 11.79, 11.79, 1…
+$ surr_area_pct_hisp  &lt;dbl&gt; 2.58, 2.58, 2.58, 2.58, 7.36, 7.36, 7.36, 7.36, 26…
+$ surr_area_pct_asian &lt;dbl&gt; 4.05, 4.05, 4.05, 4.05, 7.09, 7.09, 7.09, 7.09, 3.…
+$ surr_area_pct_other &lt;dbl&gt; 5.58, 5.58, 5.58, 5.58, 7.00, 7.00, 7.00, 7.00, 4.…</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-2" class="level1">
+<h1>Data 2</h1>
+<section id="introduction-and-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-and-data-1">Introduction and data</h2>
+<ul>
+<li><p><strong>Source of the Data:</strong> LA city provides data sets on various topics. This set is on their website and is data collected on arrests in the city from 2010 to 2019: <a href="https://data.lacity.org/Public-Safety/Drug-Possession-Arrest-Data-By-Race/x4fz-zcf7" class="uri">https://data.lacity.org/Public-Safety/Drug-Possession-Arrest-Data-By-Race/x4fz-zcf7</a></p></li>
+<li><p><strong>Data Collection:</strong> This data was collected from 2010 through 2019 by the Los Angeles Police Department. It is transcribed from original arrest reports which were then typed on paper.&nbsp;</p></li>
+<li><p><strong>Overview of Observations:</strong> Each observation is an individual’s arrest for drug possession. There are 16 variables and 1.24 million observations, we are only looking at the rows from 2019, of which there are 25,174. For each observation there are variables that cover when and where the arrest was made, information about the person being arrested such as their age, gender, and race, there’s also columns which cover information about why the arrest was made such as the charge and charge description.&nbsp;</p></li>
+</ul>
+</section>
+<section id="research-question-1" class="level2">
+<h2 class="anchored" data-anchor-id="research-question-1">Research question</h2>
+<ul>
+<li><p><strong>Question:</strong> In Los Angeles city, within 2019, is there a correlation between the initial crime that a person is charged with (curfew violation, open container, battery, etc) and the arrest for drug possession? Do we see more people of certain races or genders charged more often with certain crimes?&nbsp;</p></li>
+<li><p><strong>Research Topic:</strong> The research topic would focus on the racial and gender demographics of drug arrests and look at what kind of situations (initial charges) often have a correlation with drug possession or the pursuit of a drug-related arrest. Our hypothesis is that non white men are the most likely to be arrested for drug possession. We think that these arrests are most likely to be paired with charges related to past experiences with the justice system such as breaking curfew and probation/parole terms.&nbsp;</p></li>
+<li><p><strong>Variables:</strong> The variables will be mostly nominal categorical variables: Sex code, Descent Code, Charge Group Description, and Charge Description. We may also look at the Age variable which is ordinal quantitative.</p></li>
+</ul>
+</section>
+<section id="literature-1" class="level2">
+<h2 class="anchored" data-anchor-id="literature-1">Literature</h2>
+<ul>
+<li><p><span class="citation" data-cites="gaston2019">(<a href="#ref-gaston2019" role="doc-biblioref">Gaston 2019</a>)</span></p></li>
+<li><p>Gaston, Shytierra. “Producing race disparities: A study of drug arrests across place and race*.” <em>Criminology</em>, 57, April 2019. <a href="https://doi.org/10.1111/1745-9125.12207" class="uri">https://doi.org/10.1111/1745-9125.12207</a>.</p></li>
+<li><p><strong>Article Summary:</strong> The article examines through a qualitative lens, how police interactions that lead to drug arrests are affected by the racial make-up of the neighborhoods the people were arrested in for drug arrests. It explores the race of who gets arrested most and where. The article finds that officers chose to use higher rates of surveillance in black neighborhoods. The article asserts that police cite “suspicion of Black citizens’ ambiguous demeanor and the area’s crime problems” to then initiate stop and frisks more often than for white people and in neighborhoods white people are more likely to frequent. This leads to disproportionate rates of Black people being arrested for drugs when it’s known that Black and white people use drugs at similar levels. Because of systemic racism in policing, Black people are also more likely to have outstanding bench warrants which increase their risk for arrest during drug stops.</p></li>
+<li><p><strong>Contribution of Research Question:</strong> This article focuses on how the location (white neighborhood or not) of the arrest may impact the decision-making of the police officer to further instigate an arrest. Our question explores the arrests from another (related) angle of whether there’s correlation between the initial reason for interaction/charge and being arrested for drugs. These reasons may vary based on the location of the interaction but that is not exactly what our project is focusing on.&nbsp;</p></li>
+</ul>
+</section>
+<section id="glimpse-of-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>possession_arrest <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Drug_Possession_Arrest_Data_By_Race.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 25337 Columns: 16
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (10): Arrest Date, Area Name, Sex Code, Descent Code, Charge Group Descr...
+dbl  (6): Report ID, Time, Area ID, Reporting District, Age, Charge Group Code
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(possession_arrest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 25,337
+Columns: 16
+$ `Report ID`                &lt;dbl&gt; 191500504, 191404179, 191404178, 191404182,…
+$ `Arrest Date`              &lt;chr&gt; "1/1/19", "1/1/19", "1/1/19", "1/1/19", "1/…
+$ Time                       &lt;dbl&gt; 1315, 1105, 1500, 1640, 250, 1500, 1200, 15…
+$ `Area ID`                  &lt;dbl&gt; 15, 14, 14, 14, 2, 14, 2, 15, 17, 1, 1, 1, …
+$ `Area Name`                &lt;chr&gt; "N Hollywood", "Pacific", "Pacific", "Pacif…
+$ `Reporting District`       &lt;dbl&gt; 1502, 1413, 1435, 1412, 241, 1435, 245, 152…
+$ Age                        &lt;dbl&gt; 24, 25, 35, 23, 37, 35, 48, 44, 35, 64, 61,…
+$ `Sex Code`                 &lt;chr&gt; "M", "F", "M", "F", "M", "M", "M", "M", "F"…
+$ `Descent Code`             &lt;chr&gt; "H", "W", "W", "W", "H", "W", "H", "W", "H"…
+$ `Charge Group Code`        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 17, 17,…
+$ `Charge Group Description` &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, "Liquor…
+$ `Arrest Type Code`         &lt;chr&gt; "M", "I", "I", "I", "M", "I", "M", "I", "M"…
+$ Charge                     &lt;chr&gt; "113.64H&amp;S", "63.44(I)(9)", "63.44(I)(9)", …
+$ `Charge Description`       &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, "OPEN A…
+$ Address                    &lt;chr&gt; "SATICOY                      ST", "ROSE", …
+$ `Cross Street`             &lt;chr&gt; "BELLAIRE                     AV", "MACHADO…</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-3" class="level1">
+<h1>Data 3</h1>
+<section id="introduction-and-data-2" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and data</h2>
+<ul>
+<li><p><strong>Source of the Data:</strong> The data was collected by the United States Diabetes Surveillance System (USDSS) under the Centers for Disease Control (CDC). The data sets can be found here: <a href="https://gis.cdc.gov/grasp/diabetes/diabetesatlas-sdoh.html" class="uri">https://gis.cdc.gov/grasp/diabetes/diabetesatlas-sdoh.html</a>.</p></li>
+<li><p><strong>Data Colletion:</strong> The data was collected from CDC’s Behavioral Risk Factor Surveillance System (BRFSS) and from the US Census Bureau’s Population Estimates Program. The BRFSS conducts surveys through both landline- and cellular- telephone-based communication.&nbsp;).</p></li>
+<li><p><strong>Overview of Observations:</strong> There are over 3100 observations and 11 variables. The variables are ‘Year, ’Country_FIPS’, ‘County’,&nbsp; ‘State’, ‘Diagnosed Diabetes Percentage’, ‘Obesity’, ‘Overall SVI’, ‘Below Poverty’, ‘Overall Socioeconomic Status’, ‘Urban_Rural’, ‘​​Newly Diagnosed Diabetes Rate per 1000’, and Each observation is the data for a unique county or county equivalent in the United States. The incidence rates of diagnosed diabetes for each county do not distinguish between types of diabetes. The data for each social detemrinant of health (SDOH) are seperated across data sets, requiring them to be manually joined.&nbsp;</p></li>
+</ul>
+</section>
+<section id="research-question-2" class="level2">
+<h2 class="anchored" data-anchor-id="research-question-2">Research question</h2>
+<ul>
+<li><p><strong>Question:</strong> How does socioeconomic status correlate to the incidence of diabetes? Is the incidence of diabetes in a community a determinant of its social vulnerability index (SVI)?&nbsp;</p></li>
+<li><p><strong>Research Topic:</strong> This topic examines the intersection of socioeconomic status, the incidence of diabetes, and social determinants of health. We hypothesize that areas classified as rural with the highest proportions of the population below the poverty line will correlate with higher rates of diagnosed diabetes.</p></li>
+<li><p><strong>Variables:</strong> The variables are both categorical and quantitative. The Year, ‘Country_FIPS’, ‘County’, and ‘State’ variables are categorical. The ‘Diagnosed Diabetes Percentage’, ‘Overall SVI’, and ‘Below Poverty’ variables are quantitive measures.&nbsp;</p></li>
+</ul>
+</section>
+<section id="literature-2" class="level2">
+<h2 class="anchored" data-anchor-id="literature-2">Literature</h2>
+<ul>
+<li><p><span class="citation" data-cites="hill-briggs2020">(<a href="#ref-hill-briggs2020" role="doc-biblioref">Hill-Briggs et al. 2020</a>)</span></p></li>
+<li><p>Hill-Briggs, Felicia et al.&nbsp;“Social Determinants of Health and Diabetes: A Scientific Review.” <em>Diabetes Care</em>, 44, 2021, <a href="https://doi.org/10.2337/dci20-0053" class="uri">https://doi.org/10.2337/dci20-0053</a>.</p></li>
+<li><p><strong>Article Summary:</strong> The article is very long but it explains the results of many different studies investigating the impact of socioeconomic status on the prevalence of diabetes in American adults. It explains that those with no high school education have the highest risk of developing diabetes, as compared to those who did not finish high school and those that have an education greater than the high school level. It further explains that poor people in poor neighborhoods have the highest risk of developing diabetes, and further clarifies these risks by race. It also investigates food environment, environmental risk factors, and social context. It then provides data to demonstrate the linkages of the health care system on social determinants of health.</p></li>
+<li><p><strong>Contribution of Research Question:</strong> It provides a very in-depth review of the many different factors included in social determinants of health that are undoubtedly included in our data’s social vulnerability index (SVI). It gives background and information relevant to our data’s topic, letting us link it to healthcare information.&nbsp;</p></li>
+</ul>
+</section>
+<section id="glimpse-of-data-2" class="level2">
+<h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>diagnosed_svi <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Diabetes_Diagnosed_OverallSVI.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...2`
+• `` -&gt; `...3`
+• `` -&gt; `...4`
+• `` -&gt; `...5`
+• `` -&gt; `...6`</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 3145 Columns: 6
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): SVI Theme: Overall SVI; Overall SVI (Percentile); NaturalBreaks, .....
+dbl (3): ...2, ...5, ...6
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>newlydiagnosed_se <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Diabetes_NewlyDiagnosed_Socioeconomic.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...2`
+• `` -&gt; `...3`
+• `` -&gt; `...4`
+• `` -&gt; `...5`
+• `` -&gt; `...6`</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 3039 Columns: 6
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): SVI Theme: Socioeconomic Status; Overall Socioeconomic Status (Perc...
+dbl (3): ...2, ...5, ...6
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>newlydiagnosed_svi <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Diabetes_NewlyDiagnosed_OverallSVI.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...2`
+• `` -&gt; `...3`
+• `` -&gt; `...4`
+• `` -&gt; `...5`
+• `` -&gt; `...6`</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 3039 Columns: 6
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): SVI Theme: Overall SVI; Overall SVI (Percentile); NaturalBreaks, .....
+dbl (3): ...2, ...5, ...6
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>obesity_belowpoverty <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Diabetes_Obesity_BelowPoverty.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+Rows: 366 Columns: 6
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(6): SVI Theme: Socioeconomic Status; Below Poverty (Percentile); Natura...
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -&gt; `...2`
+• `` -&gt; `...3`
+• `` -&gt; `...4`
+• `` -&gt; `...5`
+• `` -&gt; `...6`</code></pre>
+</div>
+</div>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-aaronson2021a" class="csl-entry" role="listitem">
+Aaronson, Daniel, Jacob Faber, Daniel Hartley, Bhashkar Mazumder, and Patrick Sharkey. 2021b. <span>“The Long-Run Effects of the 1930s HOLC <span>“</span>Redlining<span>”</span> Maps on Place-Based Measures of Economic Opportunity and Socioeconomic Success.”</span> <em>Regional Science and Urban Economics</em> 86 (January): 103622. <a href="https://doi.org/10.1016/j.regsciurbeco.2020.103622">https://doi.org/10.1016/j.regsciurbeco.2020.103622</a>.
+</div>
+<div id="ref-aaronson2021" class="csl-entry" role="listitem">
+———. 2021a. <span>“The Long-Run Effects of the 1930s HOLC <span>“</span>Redlining<span>”</span> Maps on Place-Based Measures of Economic Opportunity and Socioeconomic Success.”</span> <em>Regional Science and Urban Economics</em> 86 (January): 103622. <a href="https://doi.org/10.1016/j.regsciurbeco.2020.103622">https://doi.org/10.1016/j.regsciurbeco.2020.103622</a>.
+</div>
+<div id="ref-gaston2019" class="csl-entry" role="listitem">
+Gaston, Shytierra. 2019. <span>“Producing Race Disparities: A Study of Drug Arrests Across Place and Race*.”</span> <em>Criminology</em> 57 (3): 424–51. <a href="https://doi.org/10.1111/1745-9125.12207">https://doi.org/10.1111/1745-9125.12207</a>.
+</div>
+<div id="ref-hill-briggs2020" class="csl-entry" role="listitem">
+Hill-Briggs, Felicia, Nancy E. Adler, Seth A. Berkowitz, Marshall H. Chin, Tiffany L. Gary-Webb, Ana Navas-Acien, Pamela L. Thornton, and Debra Haire-Joshu. 2020. <span>“Social Determinants of Health and Diabetes: A Scientific Review.”</span> <em>Diabetes Care</em> 44 (1): 258–79. <a href="https://doi.org/10.2337/dci20-0053">https://doi.org/10.2337/dci20-0053</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

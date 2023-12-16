@@ -1,0 +1,8 @@
+---
+title: "199BSA1"
+subtitle: "STA 199 Project"
+format: html
+editor: visual
+---
+
+Redlining, a discriminatory lending practice which prevented many minority communities from receiving federal loans, has left a legacy of racial segregation, with formerly redlined neighborhoods being among the most segregated areas in the United States in 2020. Using two models, one that predicts the percentage of non-white residents in a zone and another that predicts the zone level, we analyze what factors are most likely to contribute to segregation in historically redlined regions. The results suggest that the difference in the proportion in white residents between the formerly redlined neighborhood and the directly adjacent areas is the strongest predictor of racial segregation. To solidify this result, we conducted a two-sided hypothesis test, which produced a p-value significant at the $\alpha = 0.05$ level, confirming a statistically significant difference in racial composition. This research demonstrates the importance of choosing small spatial scales when conducting inequality research to avoid the ecological fallacy, where the aggregation of data masks distinct patterns at lower levels of analysis. Thus, policymakers need to consider targeting specific blocks and neighborhoods as opposed to zip codes when implementing economic development initiatives.
